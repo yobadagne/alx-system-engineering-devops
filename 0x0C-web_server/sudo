@@ -1,1 +1,9 @@
-Hello World! /var/www/html/index.nginx-debian.html
+server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /etc/nginx/html;
+    index  index.html index.htm;
+    location /redirect_me {
+        return 301 http://cuberule.com/;
+    }
+}/etc/nginx/sites-available/default
