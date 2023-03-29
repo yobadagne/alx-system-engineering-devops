@@ -14,7 +14,7 @@ exec { 'exec_2':
 
 exec { 'exec_3':
   require => Exec['exec_2'],
-  command => 'echo "Hello World!" | sudo tee /var/www/html/index.html',
+  command => 'sudo echo "Hello World!" | sudo tee /var/www/html/index.html',
   path    => ['/usr/bin', '/bin'],
   returns => [0,1]
 }
