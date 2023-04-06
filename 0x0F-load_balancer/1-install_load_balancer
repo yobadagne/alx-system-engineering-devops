@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Taks 1. Install your load balancer
+sudo apt-get update -y
+sudo apt-get install haproxy -y
+echo "
+frontend yoba
+         bind *:80
+         mode http
+         default_backend yoba_web_servers
+backend yoba_web_servers
+        balance roundrobin
+        option forwardfor
+        server 95785-web-01 54.237.113.148
+        server 95785-web-02 54.173.69.37 " | sudo tee -a /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
