@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Taks 1. Install your load balancer
+#Install your load balancer
+
 sudo apt-get update -y
 sudo apt-get install haproxy -y
 echo "
