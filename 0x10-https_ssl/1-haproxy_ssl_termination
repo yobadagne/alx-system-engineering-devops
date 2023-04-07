@@ -36,11 +36,6 @@ defaults
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
 
-frontend www-http
-        bind *:80
-	reqadd X-Forwarded-Proto:\ http
-        default_backend webservers
-
 frontend www-https
 	bind *:443 ssl crt /etc/haproxy/certs/www.0x00developer.tech.pem
 	reqadd X-Forwarded-Proto:\ https
